@@ -2,8 +2,9 @@
 
 Dodge glowing shapes and blinking traps in sync with the music, and catch happy stars. Catch enough stars in a row to start a FEVER PARTY: you become a giant rainbow party ball that smashes obstacles for a few beats.
 
-- 3 songs (Bouncy Start, Candy Pulse, Rocket Ride) and 3 difficulties (Easy Peasy — can't lose, Normal, Hard)
-- 🎹 Music Studio: make your own songs and play them as levels
+- 13 songs, 10 adventure levels (each unlocks the next) and 3 difficulties (Easy Peasy — can't lose, Normal, Hard)
+- Tap anywhere to jump there instantly, or slide to move
+- 🎹 Music Studio: singing animals, Jam pads with recording, 3 drum kits, 4 singer sounds, song ideas and undo — then play your song as a level
 - 🎨 Art Studio: draw your own Hero, Star, Bullet and Spinner pixel art used in the game
 - 🗺️ Level Maker: place obstacles and stars beat-by-beat on any song
 
