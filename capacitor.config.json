@@ -1,0 +1,6 @@
+{
+  "appId": "com.markdave.matthewsrythm",
+  "appName": "Matthew's Catch my Rhythm",
+  "webDir": "www",
+  "android": { "backgroundColor": "#0b0620" }
+}
