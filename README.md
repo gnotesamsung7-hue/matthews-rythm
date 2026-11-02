@@ -15,3 +15,10 @@ All music is generated live in the game, so there are no audio files.
 2. Open the **Actions** tab. The "Build APK" workflow runs on every push to `main` (or press **Run workflow**).
 3. When it finishes (~5 min), download **catch-my-rhythm-apk** under Artifacts and unzip it to get `app-debug.apk`.
 4. Copy it to the phone and install (allow "Install unknown apps").
+
+## Download link / QR code
+Every successful build publishes `CatchMyRhythm.apk` as a GitHub Release. This link always gets the newest one:
+https://github.com/gnotesamsung7-hue/matthews-rythm/releases/latest/download/CatchMyRhythm.apk
+The repo must be public for the link to work without a GitHub login.
+
+`keystore/debug.keystore` is a fixed signing key so new builds install over the old app (instead of failing with "App not installed").
