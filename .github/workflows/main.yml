@@ -5,6 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,6 +33,9 @@ jobs:
       - name: Create Android project
         run: npx cap add android
 
+      - name: App icon + splash (bubbly face)
+        run: cp -r icons/res/. android/app/src/main/res/
+
       - name: Landscape + fullscreen
         run: |
           sed -i 's/android:name=".MainActivity"/android:name=".MainActivity"\n            android:screenOrientation="sensorLandscape"/' android/app/src/main/AndroidManifest.xml
@@ -37,6 +43,11 @@ jobs:
 
       - name: Copy game into app
         run: npx cap sync android
+
+      - name: Use the same signing key every build (so updates install over the old app)
+        run: |
+          mkdir -p ~/.android
+          cp keystore/debug.keystore ~/.android/debug.keystore
 
       - name: Build debug APK
         run: |
@@ -48,3 +59,14 @@ jobs:
         with:
           name: catch-my-rhythm-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
+      - name: Rename APK
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk CatchMyRhythm.apk
+
+      - name: Publish download link (for the QR code)
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Matthew's Catch my Rhythm (build ${{ github.run_number }})
+          files: CatchMyRhythm.apk
+          make_latest: true
